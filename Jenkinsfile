@@ -27,7 +27,7 @@ pipeline {
                     sh '''cp -r /var/lib/jenkins/workspace/deploy/target/*.war .
                     docker build -t   sakshijagtap457647/tomcat .
                     docker login 
-                    docker push  sakshijagtap457647/tomcat:latest '''
+                    docker push  sakshijagtap457647/tomcat:letest '''
                 }
             }
         }
