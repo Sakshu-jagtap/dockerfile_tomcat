@@ -1,14 +1,10 @@
-# Use the official Tomcat image from Docker Hub
-FROM tomcat:latest
 
-# Set the working directory inside the container
-WORKDIR /usr/local/tomcat
 
+FROM tomcat:8.5.99-jdk21-corretto-al2
 # (Optional) Remove the default webapps directory
-RUN rm -rf webapps/*
-
+WORKDIR /usr/local/apache-tomcat-8.5.99/
 # Copy your WAR file into the webapps directory of Tomcat
-COPY path/to/your/application.war webapps/
+COPY /var/lib/jenkins/workspace/demo/target/*.war webapps/
 
 # (Optional) Expose the default Tomcat port
 EXPOSE 8080
