@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'git init '
                 echo "Successful pull from Git"
-                git 'https://github.com/deepak-umre/dockerfile_tomcat.git'
+                git 'https://github.com/Sakshu-jagtap/dockerfile_tomcat.git'
             }
         }
         stage('Build') {
@@ -25,9 +25,9 @@ pipeline {
             steps {
                 script {
                     sh '''cp -r /var/lib/jenkins/workspace/deploy/target/*.war .
-                    docker build -t deepakumre/tomcat1 . 
+                    docker build -t   sakshijagtap457647/tomcat .
                     docker login 
-                    docker push deepakumre/tomcat1'''
+                    docker push  sakshijagtap457647/tomcat '''
                 }
             }
         }
